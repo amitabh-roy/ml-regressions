@@ -19,6 +19,8 @@ https://github.com/huzaifsayed/Linear-Regression-Model-for-House-Price-Predictio
 https://www.kaggle.com/code/gopalchettri/usa-housing-machine-learning-linear-regression#Predicting-Housing-Prices-for-regions-in-the-USA.
 https://www.kaggle.com/code/foxtreme/linear-regression-practice/notebook
 
+more notes
+
 """
 import numpy as np
 import pandas as pd
@@ -52,4 +54,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_
 # Create and Train the Model
 from sklearn.linear_model import LinearRegression
 lm = LinearRegression()
-lm.fit(X_train, y_train)    
+lm.fit(X_train, y_train)   
+
+# Print the coefficients
+print("Coefficients:", lm.coef_)
