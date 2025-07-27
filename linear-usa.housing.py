@@ -16,6 +16,9 @@ Dataset contains 7 columns and 5000 rows with CSV extension. The data contains t
 'Address': Address of the houses.
 
 https://github.com/huzaifsayed/Linear-Regression-Model-for-House-Price-Prediction
+https://www.kaggle.com/code/gopalchettri/usa-housing-machine-learning-linear-regression#Predicting-Housing-Prices-for-regions-in-the-USA.
+https://www.kaggle.com/code/foxtreme/linear-regression-practice/notebook
+
 """
 import numpy as np
 import pandas as pd
@@ -38,3 +41,15 @@ plt.show()
 sns.distplot(housing['Price'])
 
 print(housing.columns)
+
+#Training and Testing Data
+
+X = housing[['Avg. Area Income', 'Avg. Area House Age', 'Avg. Area Number of Rooms',
+             'Avg. Area Number of Bedrooms', 'Area Population']]
+y = housing['Price']
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=101)
+# Create and Train the Model
+from sklearn.linear_model import LinearRegression
+lm = LinearRegression()
+lm.fit(X_train, y_train)    
